@@ -1,25 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StyleSheet, Text, View } from 'react-native';
+import { NativeBaseProvider,StatusBar } from "native-base";
+import theme from "./theme.config";
+import Loading from "./src/pages/Loading";
+import JourneyList from "./src/pages/JourneyList";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>HangOut</Text>
-      <Text style={styles.text}>結伴出遊吧！</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider theme={theme}>
+      {/* <Loading /> */}
+      <JourneyList />
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#11C1DA',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: 'white',
-    textAlign: 'center'
-  }
-});
